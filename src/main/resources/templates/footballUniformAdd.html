@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/footballUniforms" enctype="multipart/form-data">
+
+  <label for="footballers">Фамилии футболистов:</label>
+    <br>
+    <select required multiple th:size="7" id= "footballers" name="footballers">
+        <tr th:each="fut:${footballers}">
+            <option th:text="${fut.getLastname()}" ></option>
+        </tr>
+    </select>
+  <br>
+   <label  for="price">Цена:</label>
+   <input required name="price" type="text" pattern="[0-9]{1,}" id="price">
+   <br>
+    <label for="title">Описание</label>
+    <input name="title"  type="text" id="title">
+    <br>
+    <label for="image1">Фото</label>
+    <input name="file1"  required type="file" accept=".png, .jpeg, .jpg, .heic" id="image1">
+    <br>
+    <label for="image2">Фото</label>
+    <input name="file2" type="file" accept=".png, .jpeg, .jpg" id="image2">
+    <br>
+  <label for="sizes">размеры</label>
+  <br>
+    <select multiple required th:size="7" id= "sizes" name="sizes">
+        <option>XS</option>
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+        <option>XXL</option>
+    </select>
+    <br>
+  <input type="submit">
+
+</form>
+</body>
+</html>

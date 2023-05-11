@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Футболисты</title>
+</head>
+<body>
+<div th:each="cur:${footballers}">
+
+  <a th:href="@{/footballers/{id}(id=${cur.getId()})}" th:text="${cur.getLastname}+' '+${cur.getId()}"></a>
+</div>
+</body>
+</html>

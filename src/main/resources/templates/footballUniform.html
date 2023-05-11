@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Футбольная форма</title>
+</head>
+<body>
+<h1 th:text="${footballForm.getTitle()}"></h1>
+<tr th:each="image:${footballForm.getImages()}">
+    <img height="px" width="200px" th:src="@{/images/{id}(id=${image.getId()})}">
+</tr>
+<h3 th:text="'Цена: '+${footballForm.getPrice()}"></h3>
+<h3>Размеры:</h3>
+<div th:each="size:${footballForm.getSizes()}">
+<tr th:text="${size}"></tr>
+</div>
+<h3>Доступные футболисты</h3>
+<div th:each="footballer:${footballForm.getFootballers()}">
+    <tr th:text="${footballer.getLastname()}"></tr>
+</div>
+<div >
+<form th:if="${Admin}" th:method="delete"  th:action="@{/footballUniforms/{id}(id=${footballForm.getId()})}">
+    <input  type="submit" value="Удалить форму">
+</form>
+<form th:method="post"  th:action="@{/footballUniforms/{id}(id=${footballForm.getId()})}">
+    <input  type="submit" value="Добавить в корзину">
+</form>
+</div>
+</body>
+</html>

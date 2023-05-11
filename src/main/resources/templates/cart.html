@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+</head>
+<body>
+<div th:each="form:${user.getFootballUniforms()}">
+
+    <form th:method="delete" th:action="@{/cart/{id}(id=${form.getId()})}">
+        <a th:href="@{/footballUniforms/{id}(id=${form.getId()})}" th:text="${form.getTitle()}"></a>
+        <input type="submit" value="-">
+    </form>
+
+</div>
+<br>
+<br>
+<h3 th:text="'цена: '+${user.getPriceCart()}"></h3>
+<br>
+<br>
+<a href="/footballUniforms" >Перейти к товарам</a>
+</body>
+</html>

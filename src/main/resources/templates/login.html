@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Вход</title>
+
+</head>
+<body>
+<h1>Вход</h1>
+<div class="form">
+  <div class="login">
+
+<div class="login_h">
+  <h1>Вход</h1>
+
+  <p>С возвращением!<br>Пожалуйста, введите свои данные.</p>
+</div>
+
+<div class="form_login">
+  <form action="/login" method="post">
+    Электронная почта
+    <input class="login_input" name="username" required placeholder="Логин" type="text">
+    <br>
+    Пароль
+    <input  class="password" name="password" required placeholder="Пароль" type="password">
+    <button class="login_button" type="submit">Войти</button>
+  </form>
+</div>
+<div class="login_text">
+  <a href="/registration">Нет аккаунта? Зарегистрироваться</a>
+</div>
+  </div>
+</div>
+</body>
+</html>

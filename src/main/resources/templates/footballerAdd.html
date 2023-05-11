@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action="/footballers">
+  <label for="name">Имя футболиста</label>
+  <input name="firstname" pattern="[A-Za-z]{1,20}" title="Максимум 20 символов" required type="text" id="name">
+  <br>
+  <label for="lastname">Фамилия футболиста</label>
+  <input name="lastname" required pattern="[A-Za-z]{1,20}" title="Максимум 20 символов" type="text"  id="lastname">
+  <br>
+  <label for="number">Номер</label>
+  <input name="number" type="text" pattern="[0-9]{1,2}" title="Число от 0 до 99" required id="number">
+  <br>
+  <input type="submit">
+</form>
+</body>
+</html>
